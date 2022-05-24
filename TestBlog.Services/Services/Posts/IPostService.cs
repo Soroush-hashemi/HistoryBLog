@@ -16,5 +16,7 @@ namespace TestBlog.Services.Services.Posts
         PostDto GetPostBySlug(string slug);
         PostFilterDto GetPostsByFilter(PostFilterParams filterParams);
         bool IsSlugExist(string slug);
+        List<PostDto> GetRelatedPosts(int CategoryId);
+        List<PostDto> GetPopularPost();
     }
 }

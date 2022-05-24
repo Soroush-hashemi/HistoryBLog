@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using TestBlog.Services.DTOs.Comments;
 using TestBlog.Services.DTOs.Posts;
 using TestBlog.Services.Services.Posts;
@@ -32,11 +32,11 @@ namespace TestBlog.Web.Pages
         public IActionResult OnGet(string slug)
         {
             Post = _postService.GetPostBySlug(slug);
-            if (Post == null)
+            if (Post == null) 
                 return NotFound();
 
             Comments = _commentService.GetPostComments(Post.PostId);
-            //RelatedPosts = _postService.GetRelatedPosts(Post.SubCategoryId ?? Post.CategoryId);
+            RelatedPosts = _postService.GetRelatedPosts(Post.SubCategoryId ?? Post.CategoryId); // اگر مقدار سمت چپ نال بود مقدار سمت راست را نشان میدهد 
             //_postService.IncreaseVisit(Post.PostId);
             return Page();
         }
@@ -50,7 +50,7 @@ namespace TestBlog.Web.Pages
             {
                 Post = _postService.GetPostBySlug(slug);
                 Comments = _commentService.GetPostComments(Post.PostId);
-                //RelatedPosts = _postService.GetRelatedPosts(Post.SubCategoryId ?? Post.CategoryId);
+                RelatedPosts = _postService.GetRelatedPosts(Post.SubCategoryId ?? Post.CategoryId);
                 return Page();
             }
 

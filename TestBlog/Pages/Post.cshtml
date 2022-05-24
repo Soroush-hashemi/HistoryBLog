@@ -4,6 +4,7 @@
 @model TestBlog.Web.Pages.PostModel
 @{
     ViewData["Title"] = Model.Post.Title;
+    var imageUrl = @Directories.GetPostImage(Model.Post.ImageName);
 }
 <div class="container">
     <ul class="breadcrumbs">
@@ -64,17 +65,17 @@
                     </div> <!-- end entry header -->
 
                     <div class="entry__img-holder">
-                        <img src="@Directories.GetPostImage(Model.Post.ImageName)" alt="@Model.Post.Title" class="entry__img">
+                        <img src="@imageUrl" alt="@Model.Post.Title" class="entry__img">
                     </div>
 
                     <div class="entry__article-wrap">
                         <div class="entry__share">
                             <div class="sticky-col" style="">
                                 <div class="socials socials--rounded socials--large">
-                                    <a class="social social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=" title="facebook" target="_blank" aria-label="facebook">
+                                    <a class="social social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=postUrl" title="facebook" target="_blank" aria-label="facebook">
                                         <i class="ui-facebook"></i>
                                     </a>
-                                    <a class="social social-twitter" href="https://twitter.com/intent/tweet?url=tUrl" title="twitter" target="_blank" aria-label="twitter">
+                                    <a class="social social-twitter" href="https://twitter.com/intent/tweet?url=ostUrl" title="twitter" target="_blank" aria-label="twitter">
                                         <i class="ui-twitter"></i>
                                     </a>
                                     <a class="social social-twitter bg-green" href="https://wa.me?text=postUrl" title="WhatsApp" target="_blank" aria-label="whatsApp">
@@ -91,31 +92,32 @@
                             @Html.Raw(Model.Post.Description)
                         </div> <!-- end entry article -->
                     </div> <!-- end entry article wrap -->
-                    @*@if (Model)
+
+                    @if (Model.RelatedPosts.Any())
                     {
                         <section class="section related-posts mt-40 mb-0">
                             <div class="title-wrap title-wrap--line">
                                 <h3 class="section-title">مطالب مرتبط</h3>
                             </div>
                             <div id="owl-posts-3-items" class="owl-carousel owl-theme owl-carousel--arrows-outside">
-                                @foreach (var post in Model)
+                                @foreach (var post in Model.RelatedPosts)
                                 {
                                     <article class="entry thumb thumb--size-1">
-                                        <div class="entry__img-holder thumb__img-holder"">
+                                        <div class="entry__img-holder thumb__img-holder" style="background-image: url('@Directories.GetPostImage(post.ImageName)');">
                                             <div class="bottom-gradient"></div>
                                             <div class="thumb-text-holder">
                                                 <h2 class="thumb-entry-title">
-                                                    <a asp-page="Post" asp-route-slug=""></a>
+                                                    <a asp-page="Post" asp-route-slug="@post.Slug">@post.Title</a>
                                                 </h2>
                                             </div>
-                                            <a asp-page="Post" asp-route-slug="" class="thumb-url"></a>
+                                            <a asp-page="Post" asp-route-slug="@post.Slug" class="thumb-url"></a>
                                         </div>
                                     </article>
                                 }
                             </div> <!-- end slider -->
 
                         </section>
-                    }*@
+                    }
                 </article> <!-- end standard post -->
                 <!-- Comments -->
                 <div class="entry-comments">

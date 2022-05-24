@@ -108,6 +108,22 @@ namespace TestBlog.Services.Services.Posts
             };
         }
 
+        public List<PostDto> GetRelatedPosts(int CategoryId)
+        {
+            return _context.Posts
+                .Where(r => r.CategoryId == CategoryId || r.SubCategoryId == CategoryId)
+                .OrderByDescending(d => d.CreationDate)
+                .Take(6).Select(post => PostMapper.MapToDto(post)).ToList();
+        }
+
+        public List<PostDto> GetPopularPost()
+        {
+            return _context.Posts
+                .Include(u => u.User)
+                .OrderByDescending(v => v.Visit)
+                .Take(6).Select(post => PostMapper.MapToDto(post)).ToList();
+        }
+
         public bool IsSlugExist(string slug)
         {
             return _context.Posts.Any(p => p.Slug == slug.ToSlug());
