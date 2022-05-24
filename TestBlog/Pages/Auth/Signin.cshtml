@@ -1,0 +1,25 @@
+﻿@page
+@model TestBlog.Web.Pages.Auth.SigninModel
+@{
+    Layout = "../Shared/Header/_LoginLayout";
+    ViewData["Title"] = " ثبت نام ";
+}
+
+<form method="post">
+    <h1>@ViewData["Title"]</h1>
+    <div>
+        <input type="text" asp-for="UserName" placeholder="نام کاربری" id="username" />
+         <span asp-validation-for="UserName" style="color: red"></span>
+    </div>
+    <div>
+        <input type="text" asp-for="FullName" placeholder="نام و نام خانوادگی" />
+    </div>
+    <div>
+        <input type="password" asp-for="Password" placeholder="کلمه عبور" id="password" />
+        <span asp-validation-for="Password" style="color: red"></span>
+    </div>
+    <div>
+        <input type="submit" value="ثبت نام" />
+        <a asp-page="Login">ورود به سایت</a>
+    </div>
+</form>

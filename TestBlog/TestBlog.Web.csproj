@@ -1,0 +1,124 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\UserPanel\**" />
+    <Content Remove="Areas\UserPanel\**" />
+    <EmbeddedResource Remove="Areas\UserPanel\**" />
+    <None Remove="Areas\UserPanel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\colors\cyan.css" />
+    <None Include="wwwroot\css\colors\orange.css" />
+    <None Include="wwwroot\css\colors\pink.css" />
+    <None Include="wwwroot\css\colors\red.css" />
+    <None Include="wwwroot\css\colors\violet.css" />
+    <None Include="wwwroot\css\font-icons.css" />
+    <None Include="wwwroot\css\owl-carousel\AjaxLoader.gif" />
+    <None Include="wwwroot\css\owl-carousel\grabbing.png" />
+    <None Include="wwwroot\css\owl-carousel\Thumbs.db" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\style.css.map" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb.eot" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb_Black.eot" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb_Bold.eot" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb_Light.eot" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb_Medium.eot" />
+    <None Include="wwwroot\fonts\IRANSans\eot\IRANSansWeb_UltraLight.eot" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb_Black.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb_Bold.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb_Light.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb_Medium.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\ttf\IRANSansWeb_UltraLight.ttf" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb_Black.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb_Bold.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb_Light.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb_Medium.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff2\IRANSansWeb_UltraLight.woff2" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb.woff" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb_Black.woff" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb_Bold.woff" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb_Light.woff" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb_Medium.woff" />
+    <None Include="wwwroot\fonts\IRANSans\woff\IRANSansWeb_UltraLight.woff" />
+    <None Include="wwwroot\fonts\ui-icons.eot" />
+    <None Include="wwwroot\fonts\ui-icons.svg" />
+    <None Include="wwwroot\fonts\ui-icons.ttf" />
+    <None Include="wwwroot\fonts\ui-icons.woff" />
+    <None Include="wwwroot\fonts\ui-icons.woff2" />
+    <None Include="wwwroot\img\apple-icon.png" />
+    <None Include="wwwroot\img\content\about\about_bg.jpg" />
+    <None Include="wwwroot\img\content\cinema-banner.jpg" />
+    <None Include="wwwroot\img\content\mag-1.jpg" />
+    <None Include="wwwroot\img\content\placeholder_300.jpg" />
+    <None Include="wwwroot\img\content\placeholder_300_600.jpg" />
+    <None Include="wwwroot\img\content\placeholder_336.jpg" />
+    <None Include="wwwroot\img\content\placeholder_728.jpg" />
+    <None Include="wwwroot\img\content\placeholder_970.jpg" />
+    <None Include="wwwroot\img\content\placeholder_970_1.jpg" />
+    <None Include="wwwroot\img\content\single\Huawei-Mate-X-4-610x380.jpg" />
+    <None Include="wwwroot\img\content\single\Huawei-Mate-X-6.jpg" />
+    <None Include="wwwroot\img\content\Thumbs.db" />
+    <None Include="wwwroot\img\content\thumb\post-1.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-2-2.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-2.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-3.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-4.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-5-2.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-5.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-6.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-7.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-8.jpg" />
+    <None Include="wwwroot\img\content\thumb\post-9.jpg" />
+    <None Include="wwwroot\img\default-avatar.png" />
+    <None Include="wwwroot\img\dropdown.png" />
+    <None Include="wwwroot\img\empty.png" />
+    <None Include="wwwroot\img\favicon.png" />
+    <None Include="wwwroot\img\map_pin.png" />
+    <None Include="wwwroot\img\Thumbs.db" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\easing.min.js" />
+    <None Include="wwwroot\js\flickity.pkgd.min.js" />
+    <None Include="wwwroot\js\gmap3.min.js" />
+    <None Include="wwwroot\js\jquery.appear.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.newsTicker.min.js" />
+    <None Include="wwwroot\js\jquery.sticky-kit.min.js" />
+    <None Include="wwwroot\js\lazysizes.min.js" />
+    <None Include="wwwroot\js\modernizr.min.js" />
+    <None Include="wwwroot\js\owl-carousel.min.js" />
+    <None Include="wwwroot\js\scripts.js" />
+    <None Include="wwwroot\js\twitterFetcher_min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestBlog.DataLayer\TestBlog.DataLayer.csproj" />
+    <ProjectReference Include="..\TestBlog.Services\TestBlog.Services.csproj" />
+  </ItemGroup>
+
+</Project>
