@@ -7,6 +7,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
     {
         [Area("admin")]
         [Authorize]
+        [Route("/Admin")]
         public IActionResult Index()
         {
             return View();
