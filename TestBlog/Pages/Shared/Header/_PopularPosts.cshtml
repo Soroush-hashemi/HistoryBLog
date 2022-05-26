@@ -13,7 +13,8 @@
                         <div class="post-list-small__img-holder">
                             <div class="thumb-container thumb-100">
                                 <a asp-page="Post" asp-route-slug="@item.Slug">
-                                    <img data-src="@Directories.GetPostImage(item.ImageName)" src="/img/Thumbs.db" alt="@item.Title" class="post-list-small__img--rounded lazyload">
+                                    <img data-src="@Directories.GetPostImage(item.ImageName)" 
+                                    src="/img/Thumbs.db" alt="@item.Title" class="post-list-small__img--rounded lazyload">
                                 </a>
                             </div>
                         </div>

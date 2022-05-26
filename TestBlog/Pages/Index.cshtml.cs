@@ -22,7 +22,7 @@ namespace TestBlog.Pages
 
         public IActionResult OnGetPopularPost()
         {
-            return Partial("_PopularPosts" , _postService.GetPopularPost());
+            return Partial("_PopularPosts", _postService.GetPopularPost());
         }
     }
 }

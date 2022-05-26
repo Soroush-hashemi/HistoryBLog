@@ -107,6 +107,14 @@
                         <i class="fa fa-user" style="font-size:23px"></i>
                     </a>
                 </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="nav__right">
+                        <a class="bg-light Admin-avatar" style="color:black" href="../Admin">
+                            <i class="fa fa-user" style="font-size:23px"></i>
+                        </a>
+                    </div>
+                }
                 <div class="nav__right">
                     <!-- Search -->
                     <div class="nav__right-item nav__search">

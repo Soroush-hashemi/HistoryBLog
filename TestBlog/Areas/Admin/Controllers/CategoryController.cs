@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TestBlog.Services.DTOs.Categories;
 using TestBlog.Services.Services.Categories;
 using TestBlog.Services.Utilities;
@@ -7,6 +8,7 @@ using TestBlog.Web.Areas.Admin.Models.Categories;
 namespace TestBlog.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

@@ -36,7 +36,7 @@ namespace TestBlog.Services.Mappers
                 UserFullName = post.User?.FullName,
                 Visit = post.Visit,
                 CreationDate = post.CreationDate,
-                Category = post.Category == null ? null : CategoryMapper.Map(post.Category), //
+                Category = post.Category == null ? null : CategoryMapper.Map(post.Category),
                 ImageName = post.ImageName,
                 PostId = post.Id,
                 SubCategoryId = post.SubCategoryId,
