@@ -18,5 +18,6 @@ namespace TestBlog.Services.Services.Posts
         bool IsSlugExist(string slug);
         List<PostDto> GetRelatedPosts(int CategoryId);
         List<PostDto> GetPopularPost();
+        void IncreaseVisit(int postId);
     }
 }

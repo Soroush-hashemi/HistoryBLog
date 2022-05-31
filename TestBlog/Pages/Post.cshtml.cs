@@ -37,7 +37,7 @@ namespace TestBlog.Web.Pages
 
             Comments = _commentService.GetPostComments(Post.PostId);
             RelatedPosts = _postService.GetRelatedPosts(Post.SubCategoryId ?? Post.CategoryId); // اگر مقدار سمت چپ نال بود مقدار سمت راست را نشان میدهد 
-            //_postService.IncreaseVisit(Post.PostId);
+            _postService.IncreaseVisit(Post.PostId);
             return Page();
         }
 

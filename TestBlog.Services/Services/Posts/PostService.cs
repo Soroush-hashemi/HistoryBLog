@@ -128,5 +128,12 @@ namespace TestBlog.Services.Services.Posts
         {
             return _context.Posts.Any(p => p.Slug == slug.ToSlug());
         }
+
+        public void IncreaseVisit(int postId)
+        {
+            var post = _context.Posts.FirstOrDefault(p => p.Id == postId);
+            post.Visit += 1;
+            _context.SaveChanges();
+        }
     }
 }
