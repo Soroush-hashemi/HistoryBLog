@@ -11,6 +11,7 @@ namespace TestBlog.Services.Services.Categories
     public interface ICategoryService
     {
         OperationResult CreateCategory(CreateCategoryDto command);
+        OperationResult DeleteCategory(int categoryDeleteId);
         OperationResult EditCategory(EditCategoryDto command);
         List<CategoryDto> GetAllCategory();
         List<CategoryDto> GetChildCategories(int parentId);

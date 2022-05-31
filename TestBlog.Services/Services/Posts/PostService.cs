@@ -135,5 +135,13 @@ namespace TestBlog.Services.Services.Posts
             post.Visit += 1;
             _context.SaveChanges();
         }
+
+        public OperationResult DeletePost(int PostDeleteId)
+        {
+            var DeletePost = _context.Posts.FirstOrDefault(c => c.Id == PostDeleteId);
+            _context.Remove(DeletePost);
+            _context.SaveChanges();
+            return OperationResult.Success();
+        }
     }
 }

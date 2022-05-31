@@ -77,6 +77,15 @@ namespace TestBlog.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Delete(int DeleteCategoryId)
+        {
+            var categoryDelete = _categoryService.DeleteCategory(DeleteCategoryId);
+            if (categoryDelete == null)
+                return RedirectToAction("Index");
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult GetChildCategories(int parentId)
         {
             var categoy = _categoryService.GetChildCategories(parentId);

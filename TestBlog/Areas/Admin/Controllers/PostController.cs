@@ -111,5 +111,13 @@ namespace TestBlog.Web.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Delete(int DeletePostId)
+        {
+            var PostDelete = _postService.DeletePost(DeletePostId);
+            //if (PostDelete == null)
+            //    return RedirectToAction("Index");
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace TestBlog.Services.Services.Posts
     {
         OperationResult CreatePost(CreatePostDto command);
         OperationResult EditPost(EditPostDto command);
+        OperationResult DeletePost(int PostDeleteId);
         PostDto GetPostById(int postId);
         PostDto GetPostBySlug(string slug);
         PostFilterDto GetPostsByFilter(PostFilterParams filterParams);

@@ -1,4 +1,5 @@
-﻿using TestBlog.DataLayer.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using TestBlog.DataLayer.Context;
 using TestBlog.DataLayer.Entities;
 using TestBlog.Services.DTOs.Categories;
 using TestBlog.Services.Mappers;
@@ -36,6 +37,14 @@ namespace TestBlog.Services.Services.Categories
                 MetaDescription = command.MetaDescription
             };
             _context.Categories.Add(category);
+            _context.SaveChanges();
+            return OperationResult.Success();
+        }
+
+        public OperationResult DeleteCategory(int categoryDeleteId)
+        {
+            var DeleteCategory = _context.Categories.FirstOrDefault(c => c.Id == categoryDeleteId);
+            _context.Remove(DeleteCategory);
             _context.SaveChanges();
             return OperationResult.Success();
         }
