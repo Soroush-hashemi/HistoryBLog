@@ -24,7 +24,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
             {
                 CategorySlug = categorySlug,
                 PageId = pageId,
-                Take = 10,
+                Take = 6,
                 Title = title
             };
             var model = _postService.GetPostsByFilter(param);
