@@ -138,7 +138,7 @@ namespace TestBlog.Services.Services.Posts
 
         public OperationResult DeletePost(int PostDeleteId)
         {
-            var DeletePost = _context.Posts.FirstOrDefault(c => c.Id == PostDeleteId);
+            var DeletePost = _context.Posts.FirstOrDefault(p => p.Id == PostDeleteId);
             _context.Remove(DeletePost);
             _context.SaveChanges();
             return OperationResult.Success();

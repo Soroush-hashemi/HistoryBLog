@@ -77,12 +77,12 @@ namespace TestBlog.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int DeleteCategoryId)
+        public IActionResult Delete(int Id)
         {
-            var categoryDelete = _categoryService.DeleteCategory(DeleteCategoryId);
-            if (categoryDelete == null)
-                return RedirectToAction("Index");
+            if (Id == null || Id == 0)
+                OperationResult.NotFound("Error");
 
+            var categoryDelete = _categoryService.DeleteCategory(Id);
             return RedirectToAction("Index");
         }
 
