@@ -78,7 +78,7 @@
                         @if (Model.FilterParams.PageId > 1)
                         {
                             <li class="paginate_button previous">
-                                <a onclick="changePage(@(Model.FilterParams.PageId-1))" href="#">قبلی</a>
+                                <a onclick="changePage(@Model.FilterParams.PageId-1)" href="#">قبلی</a>
                             </li>
                         }
                         else
@@ -98,7 +98,7 @@
                         @if (Model.PageCount > Model.FilterParams.PageId)
                         {
                             <li class="paginate_button next">
-                                <a onclick="changePage(@(Model.FilterParams.PageId+1))" href="#">بعدی</a>
+                                <a onclick="changePage(@Model.FilterParams.PageId+1)" href="#">بعدی</a>
                             </li>
                         }
                         else

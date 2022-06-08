@@ -24,7 +24,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
             {
                 CategorySlug = categorySlug,
                 PageId = pageId,
-                Take = 6,
+                Take = 3,
                 Title = title
             };
             var model = _postService.GetPostsByFilter(param);
@@ -102,7 +102,6 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 Title = editViewModel.Title,
                 PostId = id
             });
-
             if (result.Status != OperationResultStatus.Success)
             {
                 ModelState.AddModelError(nameof(CreatePostViewModel.Slug), result.Message);

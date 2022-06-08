@@ -1,17 +1,35 @@
-﻿@page
+﻿@page "{handler?}"
+@using TestBlog.Services.Utilities
+@using TestBlog.Services.Services.Categories
+@using TestBlog.Services.DTOs.Categories
 @model TestBlog.Web.Pages.SearchModel
+@inject ICategoryService _categoryService;
 @{
+    CategoryDto category = null;
+    var search = "";
+    if (!string.IsNullOrWhiteSpace(Model.Filter.FilterParams.CategorySlug))
+    {
+        category = _categoryService.GetCategoryBy(Model.Filter.FilterParams.CategorySlug);
+        if (category != null)
+        {
+            search = category.Title;
+        }
+    }
+    else
+    {
+        search = Model.Filter.FilterParams.Title ?? "مقالات سایت";
+    }
+    ViewData["Title"] = search;
 }
 
-
 <div class="main-container container pt-40" id="main-container">
-
+        
     <!-- Content -->
     <div class="row">
 
         <!-- Posts -->
         <div class="col-lg-8 blog__content mb-72">
-            <h1 class="page-title">نتایج جستجو برای: تکنولوژی</h1>
+            <h1 class="page-title">نتایج جستجو برای: @search </h1>
 
             <article class="entry card post-list">
                 <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(img/content/thumb/post-8.jpg)">
