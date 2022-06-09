@@ -90,8 +90,8 @@ namespace TestBlog.Services.Services.Posts
                 .OrderByDescending(d => d.CreationDate)
                 .AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(filterParams.CategorySlug)) // If CategorySlug was not Null
-                result = result.Where(r => r.Category.Slug == filterParams.CategorySlug);
+            if (!string.IsNullOrWhiteSpace(filterParams.CategorySlug)) // if CategorySlug was not Null
+                result = result.Where(r => r.Category.Slug == filterParams.CategorySlug || r.SubCategory.Slug == filterParams.CategorySlug);
 
             if (!string.IsNullOrWhiteSpace(filterParams.Title))
                 result = result.Where(r => r.Title.Contains(filterParams.Title));

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TestBlog.DataLayer.Context;
+﻿using TestBlog.DataLayer.Context;
 using TestBlog.DataLayer.Entities;
 using TestBlog.Services.DTOs.Categories;
 using TestBlog.Services.Mappers;

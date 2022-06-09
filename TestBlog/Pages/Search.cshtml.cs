@@ -13,9 +13,15 @@ namespace TestBlog.Web.Pages
             _postService = postService;
         }
         public PostFilterDto Filter { get; set; }
-        public void OnGet()
+        public void OnGet(int pageId = 1, string categorySlug = null, string q = null)
         {
-
+            Filter = _postService.GetPostsByFilter(new PostFilterParams()
+            {
+                CategorySlug = categorySlug,
+                PageId = pageId,
+                Take = 6,
+                Title = q
+            });
         }
     }
 }
