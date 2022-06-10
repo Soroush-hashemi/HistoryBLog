@@ -23,5 +23,17 @@ namespace TestBlog.Web.Pages
                 Title = q
             });
         }
+
+        public IActionResult OnGetPagination(int pageId = 1, string categorySlug = null, string q = null)
+        {
+            var Model = _postService.GetPostsByFilter(new PostFilterParams()
+            {
+                CategorySlug = categorySlug,
+                PageId = pageId,
+                Take = 6,
+                Title = q
+            });
+            return Partial("_SearchView", Model);
+        }
     }
 }
