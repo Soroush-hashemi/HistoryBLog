@@ -2,7 +2,6 @@
 @using TestBlog.Services.Utilities
 @model PostFilterDto
 
-
 @foreach (var item in Model.Posts)
 {
     <article class="entry card post-list">
@@ -25,6 +24,7 @@
                 </a>
             }
         </div>
+
         <div class="entry__body post-list__body card__body">
             <div class="entry__header">
                 <h2 class="entry__title">
@@ -65,8 +65,8 @@
         }
         @if (Model.PageCount > Model.FilterParams.PageId)
         {
-            <a href="#" onclick="ajaxPagination(@(@Model.FilterParams.PageId + 1))"
-       class="pagination__page pagination__icon pagination__page--next">
+            <a href="#" onclick="ajaxPagination(@(@Model.FilterParams.PageId + 1))" 
+            class="pagination__page pagination__icon pagination__page--next">
                 <i class="ui-arrow-left"></i>
             </a>
         }

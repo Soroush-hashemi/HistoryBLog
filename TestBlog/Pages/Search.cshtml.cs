@@ -19,7 +19,7 @@ namespace TestBlog.Web.Pages
             {
                 CategorySlug = categorySlug,
                 PageId = pageId,
-                Take = 6,
+                Take = 1,
                 Title = q
             });
         }
@@ -30,7 +30,7 @@ namespace TestBlog.Web.Pages
             {
                 CategorySlug = categorySlug,
                 PageId = pageId,
-                Take = 6,
+                Take = 1,
                 Title = q
             });
             return Partial("_SearchView", Model);
