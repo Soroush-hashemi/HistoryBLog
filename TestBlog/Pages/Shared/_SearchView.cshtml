@@ -60,7 +60,7 @@
             }
             else
             {
-                <a href="#" onclick="ajaxPagination(@i)" class="pagination__page">@i</a>
+                <a href="../search?pageId=@i" onclick="ajaxPagination(@i)" class="pagination__page">@i</a>
             }
         }
         @if (Model.PageCount > Model.FilterParams.PageId)
