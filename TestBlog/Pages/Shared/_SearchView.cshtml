@@ -58,20 +58,16 @@
             {
                 <span class="pagination__page pagination__page--current">@i</span>
             }
-            else  
+            else
             {
-                <a asp-route-pageId="@i" onclick="ajaxPagination(@i)" class="pagination__page">
-                    @i
-                </a>
+                <a href="#" onclick="ajaxPagination(@i)" class="pagination__page">@i</a>
             }
         }
-        @if (Model.PageCount > Model.FilterParams.PageId)
-        {
-            <a href="" onclick="ajaxPagination(@(@Model.FilterParams.PageId + 1))" 
-                class="pagination__page pagination__icon pagination__page--next">
-            </a>
-        }
+            @if (Model.PageCount > Model.FilterParams.PageId)
+            {
+                <a href="#" onclick="ajaxPagination(@(@Model.FilterParams.PageId + 1))" class="pagination__page pagination__icon pagination__page--next">
+                    <i class="ui-arrow-left"></i>
+                </a>
+            }
     </nav>
 }
-
-@*<a href="" onclick="ajaxPagination(@i)" class="pagination__page">@i</a>*@

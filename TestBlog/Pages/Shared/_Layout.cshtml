@@ -23,7 +23,9 @@
     <script src="/js/lazysizes.min.js"></script>
 </head>
 <body class="bg-light style-default style-rounded">
-
+    <div class="loading">
+        <img src="/loading.svg" alt="loading...">
+    </div>
     <div class="loader-mask">
         <div class="loader">
             <div><img src="/loading.svg" alt="loading..."></div>
@@ -61,7 +63,7 @@
     <script src="~/js/modernizr.min.js"></script>
     <script src="~/js/scripts.js"></script>
     <script src="~/js/custom.js"></script>
-    @await RenderSectionAsync("Scripts" , false)
+    @await RenderSectionAsync("Scripts", false)
 
 </body>
 
