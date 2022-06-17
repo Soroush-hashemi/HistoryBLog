@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using TestBlog.Services.Services.Categories
+@inject ICategoryService _categoryService;
+@{
+    var Categories = _categoryService.GetAllCategory();
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,12 +40,12 @@
     <!-- Bg Overlay -->
     <div class="content-overlay"></div>
 
-    <partial name="Header/_SideNav" />
+    <partial name="Header/_SideNav" model="Categories"/>
 
     <main class="main oh" id="main">
 
         <partial name="Header/_TopHeader" />
-        <partial name="Header/_MainHeader" />
+        <partial name="Header/_MainHeader" model="Categories"/>
 
         @RenderBody();
 
