@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,7 @@ namespace TestBlog.DataLayer.Entities
         public string Description { get; set; }
         public string ImageName { get; set; }
         public int Visit { get; set; }
-
+        public bool IsSpecial { get; set; }
 
         #region Relations
 

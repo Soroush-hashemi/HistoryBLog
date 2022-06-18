@@ -15,6 +15,7 @@ namespace TestBlog.Services.DTOs.Posts
         public string Description { get; set; }
         public string ImageName { get; set; }
         public int Visit { get; set; }
+        public bool IsSpecial { get; set; }
         public DateTime CreationDate { get; set; }
         public CategoryDto Category { get; set; }
         public CategoryDto SubCategory { get; set; }

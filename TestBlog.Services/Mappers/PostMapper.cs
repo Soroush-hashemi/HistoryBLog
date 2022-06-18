@@ -22,7 +22,8 @@ namespace TestBlog.Services.Mappers
                 UserId = dto.UserId,
                 Visit = 0,
                 IsDelete = false,
-                SubCategoryId = dto.SubCategoryId
+                SubCategoryId = dto.SubCategoryId,
+                IsSpecial = dto.IsSpecial
             };
         }
         public static PostDto MapToDto(Post post)
@@ -41,7 +42,7 @@ namespace TestBlog.Services.Mappers
                 PostId = post.Id,
                 SubCategoryId = post.SubCategoryId,
                 SubCategory = post.SubCategory == null ? null : CategoryMapper.Map(post.SubCategory),
-                //IsSpecial = post.IsSpecial
+                IsSpecial = post.IsSpecial
             };
         }
         public static Post EditPost(EditPostDto editDto, Post post)
@@ -51,6 +52,7 @@ namespace TestBlog.Services.Mappers
             post.CategoryId = editDto.CategoryId;
             post.Slug = editDto.Slug.ToSlug();
             post.SubCategoryId = editDto.SubCategoryId;
+            post.IsSpecial = editDto.IsSpecial;
             return post;
         }
     }

@@ -37,11 +37,9 @@ namespace TestBlog.DataLayer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("MetaDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MetaTag")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentId")
@@ -57,7 +55,7 @@ namespace TestBlog.DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("TestBlog.DataLayer.Entities.Post", b =>
@@ -83,6 +81,9 @@ namespace TestBlog.DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSpecial")
                         .HasColumnType("bit");
 
                     b.Property<string>("Slug")
@@ -113,7 +114,7 @@ namespace TestBlog.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Posts", (string)null);
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("TestBlog.DataLayer.Entities.PostComment", b =>
@@ -146,7 +147,7 @@ namespace TestBlog.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PostComments", (string)null);
+                    b.ToTable("PostComments");
                 });
 
             modelBuilder.Entity("TestBlog.DataLayer.Entities.User", b =>
@@ -180,7 +181,7 @@ namespace TestBlog.DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("TestBlog.DataLayer.Entities.Post", b =>

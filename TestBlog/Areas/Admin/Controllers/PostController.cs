@@ -53,6 +53,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 Slug = createViewModel.Slug,
                 SubCategoryId = createViewModel.SubCategoryId == 0 ? null : createViewModel.SubCategoryId,
                 Title = createViewModel.Title,
+                IsSpecial = createViewModel.IsSpecial,
                 UserId = User.GetUserId()
             });
 
@@ -77,8 +78,8 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 Slug = post.Slug,
                 SubCategoryId = post.SubCategoryId,
                 Title = post.Title,
-                ImageFile = post.ImageFile
-
+                ImageFile = post.ImageFile,
+                IsSpecial = post.IsSpecial
             };
             return View(model);
         }
@@ -100,7 +101,8 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 Slug = editViewModel.Slug,
                 SubCategoryId = editViewModel.SubCategoryId == 0 ? null : editViewModel.SubCategoryId,
                 Title = editViewModel.Title,
-                PostId = id
+                PostId = id,
+                IsSpecial = editViewModel.IsSpecial
             });
             if (result.Status != OperationResultStatus.Success)
             {
