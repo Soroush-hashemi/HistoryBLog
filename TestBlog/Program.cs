@@ -4,6 +4,7 @@ using TestBlog.DataLayer.Context;
 using TestBlog.Services.Services.Categories;
 using TestBlog.Services.Services.Comments;
 using TestBlog.Services.Services.FileManager;
+using TestBlog.Services.Services.IMainPage;
 using TestBlog.Services.Services.Posts;
 using TestBlog.Services.Services.Users;
 
@@ -17,6 +18,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IFileManager, FileManager>();
 builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<IMainPageService, MainPageService>();
 builder.Services.AddDbContext<BlogContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));

@@ -78,7 +78,6 @@ namespace TestBlog.Services.Services.Posts
              .FirstOrDefault(c => c.Slug == slug);
             if (post == null)
                 return null;
-
             return PostMapper.MapToDto(post);
         }
 

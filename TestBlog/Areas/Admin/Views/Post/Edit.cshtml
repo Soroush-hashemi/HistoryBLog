@@ -56,7 +56,11 @@
                 </div>
             </div>
             <div class="col-md-12">
-                @Html.EditorFor(m => m.ImageFile)
+                <div class="form-group">
+                    <label asp-for="ImageFile"></label>
+                    <input type="file" asp-for="ImageFile" class="form-control" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
             </div>
             <div class="col-md-6">
                 @Html.EditorFor(m => m.IsSpecial)
@@ -70,12 +74,12 @@
 
 @section scripts{
     <script>
-        $("#CategoryId").change(function () {
+        $("#CategoryId").change(function() {
             var categoryId = $(this).val();
             $.ajax({
                 url: "/admin/category/GetChildCategories?parentId=" + categoryId,
                 type: "get"
-            }).done(function (data) {
+            }).done(function(data) {
                 $("#SubCategoryId").html(`<option value='0'>انتخاب کنید</option>`);
 
                 for (var i in data) {

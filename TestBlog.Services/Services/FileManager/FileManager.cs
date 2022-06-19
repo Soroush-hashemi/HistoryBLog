@@ -17,6 +17,7 @@ namespace TestBlog.Services.Services.FileManager
         }
 
         public string SaveFileAndReturnName(IFormFile file, string savePath)
+        
         {
             if (file == null)
                 throw new Exception("File Is Null");
@@ -34,5 +35,6 @@ namespace TestBlog.Services.Services.FileManager
             file.CopyTo(stram);
             return fileName;
         }
+
     }
 }
