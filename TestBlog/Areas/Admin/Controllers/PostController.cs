@@ -7,9 +7,7 @@ using TestBlog.Web.Areas.Admin.Models.Posts;
 
 namespace TestBlog.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    [Authorize]
-    public class PostController : Controller
+    public class PostController : AdminControllerBase
     {
         private readonly IPostService _postService;
 

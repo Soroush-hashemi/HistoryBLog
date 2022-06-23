@@ -7,9 +7,7 @@ using TestBlog.Web.Areas.Admin.Models.Categories;
 
 namespace TestBlog.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    [Authorize]
-    public class CategoryController : Controller
+    public class CategoryController :  AdminControllerBase
     {
         private readonly ICategoryService _categoryService;
 

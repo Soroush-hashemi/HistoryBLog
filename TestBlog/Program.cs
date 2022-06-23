@@ -19,9 +19,17 @@ builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IFileManager, FileManager>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IMainPageService, MainPageService>();
-builder.Services.AddDbContext<BlogContext>(options =>
+builder.Services.AddDbContext<BlogContext>(option =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    option.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+});
+
+builder.Services.AddAuthorization(option =>
+{
+    option.AddPolicy("AdminPolicy", builder =>
+    {
+        builder.RequireRole("Admin");
+    });
 });
 
 builder.Services.AddAuthentication(option =>
@@ -35,6 +43,7 @@ builder.Services.AddAuthentication(option =>
     option.LoginPath = "/Auth/Login";
     option.LogoutPath = "/Auth/Logout";
     option.ExpireTimeSpan = TimeSpan.FromDays(30);
+    option.AccessDeniedPath = "/";
 });
 
 var app = builder.Build();
