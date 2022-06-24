@@ -21,9 +21,8 @@
 </div>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
         <partial name="_Header" />
-        <partial name="_SideBar" /> 
+        <partial name="_SideBar" />
         <div class="content-wrapper">
             @RenderBody()
         </div>
@@ -42,10 +41,12 @@
     <script src="~/Panels/dist/js/adminlte.min.js"></script>
     <script src="~/Panels/dist/js/demo.js"></script>
     <script src="~/js/custom.js"></script>
-    <partial name = "_ValidationScriptsPartial"/>
+    <script src="~/js/global.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <partial name="_ValidationScriptsPartial" />
     <script>
-        $(document).ready(function (){
-          $('.sidebar-menu').tree()
+        $(document).ready(function() {
+            $('.sidebar-menu').tree();
         })
     </script>
     @await RenderSectionAsync("Scripts", false)

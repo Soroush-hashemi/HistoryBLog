@@ -55,12 +55,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 UserId = User.GetUserId()
             });
 
-            if (result.Status != OperationResultStatus.Success)
-            {
-                ModelState.AddModelError(nameof(CreatePostViewModel.Slug), result.Message);
-                return View(createViewModel);
-            }
-            return RedirectToAction("Index");
+            return RedirectAndShowAlert(result, RedirectToAction("Index"));
         }
 
         public IActionResult Edit(int id)
@@ -102,13 +97,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 PostId = id,
                 IsSpecial = editViewModel.IsSpecial
             });
-            if (result.Status != OperationResultStatus.Success)
-            {
-                ModelState.AddModelError(nameof(CreatePostViewModel.Slug), result.Message);
-                return View(editViewModel);
-            }
-
-            return RedirectToAction("Index");
+            return RedirectAndShowAlert(result, RedirectToAction("Index"));
         }
 
         public IActionResult Delete(int Id)
@@ -117,6 +106,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 OperationResult.NotFound("Error");
 
             var PostDelete = _postService.DeletePost(Id);
+            SuccessAlert();
             return RedirectToAction("Index");
         }
     }

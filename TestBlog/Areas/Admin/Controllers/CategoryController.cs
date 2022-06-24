@@ -7,7 +7,7 @@ using TestBlog.Web.Areas.Admin.Models.Categories;
 
 namespace TestBlog.Web.Areas.Admin.Controllers
 {
-    public class CategoryController :  AdminControllerBase
+    public class CategoryController : AdminControllerBase
     {
         private readonly ICategoryService _categoryService;
 
@@ -15,7 +15,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
         {
             _categoryService = categoryService;
         }
-            
+
         public IActionResult Index()
         {
             return View(_categoryService.GetAllCategory());
@@ -31,12 +31,8 @@ namespace TestBlog.Web.Areas.Admin.Controllers
         {
             createViewModel.ParentId = parentId;
             var result = _categoryService.CreateCategory(createViewModel.MapToDto());
-            if (result.Status != OperationResultStatus.Success)
-            {
-                ModelState.AddModelError(nameof(createViewModel.Slug), result.Message);
-                return View();
-            }
-            return RedirectToAction("Index");
+
+            return RedirectAndShowAlert(result, RedirectToAction("Index"));
         }
 
         public IActionResult Edit(int id)
@@ -67,12 +63,8 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 Title = editModel.Title,
                 Id = id
             });
-            if (result.Status != OperationResultStatus.Success)
-            {
-                ModelState.AddModelError(nameof(editModel.Slug), result.Message);
-                return View();
-            }
-            return RedirectToAction("Index");
+
+            return RedirectAndShowAlert(result, RedirectToAction("Index"));
         }
 
         public IActionResult Delete(int Id)
@@ -81,6 +73,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
                 OperationResult.NotFound("Error");
 
             var categoryDelete = _categoryService.DeleteCategory(Id);
+            SuccessAlert();
             return RedirectToAction("Index");
         }
 
