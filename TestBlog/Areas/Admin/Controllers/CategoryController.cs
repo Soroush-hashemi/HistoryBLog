@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TestBlog.Services.DTOs.Categories;
 using TestBlog.Services.Services.Categories;
 using TestBlog.Services.Utilities;
@@ -14,7 +13,7 @@ namespace TestBlog.Web.Areas.Admin.Controllers
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
-        }
+        }  
 
         public IActionResult Index()
         {
