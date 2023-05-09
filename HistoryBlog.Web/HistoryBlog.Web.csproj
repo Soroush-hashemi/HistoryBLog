@@ -56,7 +56,6 @@
     <None Include="wwwroot\fonts\ui-icons.ttf" />
     <None Include="wwwroot\fonts\ui-icons.woff" />
     <None Include="wwwroot\fonts\ui-icons.woff2" />
-    <None Include="wwwroot\img\apple-icon.png" />
     <None Include="wwwroot\img\content\about\about_bg.jpg" />
     <None Include="wwwroot\img\content\cinema-banner.jpg" />
     <None Include="wwwroot\img\content\mag-1.jpg" />
@@ -83,7 +82,6 @@
     <None Include="wwwroot\img\default-avatar.png" />
     <None Include="wwwroot\img\dropdown.png" />
     <None Include="wwwroot\img\empty.png" />
-    <None Include="wwwroot\img\favicon.png" />
     <None Include="wwwroot\img\map_pin.png" />
     <None Include="wwwroot\img\Thumbs.db" />
     <None Include="wwwroot\js\bootstrap.min.js" />
@@ -120,13 +118,6 @@
   <ItemGroup>
     <ProjectReference Include="..\HistoryBlog.DataLayer\HistoryBlog.DataLayer.csproj" />
     <ProjectReference Include="..\HistoryBlog.CoreLayer\HistoryBlog.CoreLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Pages\Shared\Header\LoginSearchBtn.cshtml">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
