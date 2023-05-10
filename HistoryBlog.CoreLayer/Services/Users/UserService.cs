@@ -59,5 +59,21 @@ namespace TestBlog.Services.Services.Users
             };
             return userDto;
         }
+
+        public UserDto UserPanel(string UserId)
+        {
+            int Id = Convert.ToInt32(UserId);
+            var user = _context.Users.FirstOrDefault(u => u.Id == Id);
+
+            var userDto = new UserDto()
+            {
+                FullName = user.FullName,
+                Role = user.Role,
+                UserName= user.UserName,
+                RegisterDate = user.CreationDate,
+            };
+
+            return userDto;
+        }
     }
 }

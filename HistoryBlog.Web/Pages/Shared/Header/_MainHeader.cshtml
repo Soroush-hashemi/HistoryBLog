@@ -45,11 +45,23 @@
                         }
                     </ul>
                 </nav>
-                <div class="nav__left" style="position:absolute ; left:40px">
-                    <a class="bg-light comment-avatar" style="color:black" href="../auth/Signin">
-                        <i class="fa fa-user" style="font-size:23px"></i>
-                    </a>
-                </div>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <div class="nav__left" style="position:absolute ; left:40px">
+                        <a class="bg-light comment-avatar" style="color:black" href="../auth/Signin">
+                            <i class="fa fa-user" style="font-size:23px"></i>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="nav__left" style="position:absolute ; left:40px">
+                        <a class="bg-light comment-avatar" style="color:black" href="../UserPanel">
+                            <i class="fa fa-user" style="font-size:23px"></i>
+                        </a>
+                    </div>
+                }
+
                 <div class="nav__left">
                     <div class="nav__left-item nav__search">
                         <a href="#" class="nav__search-trigger" id="nav__search-trigger">

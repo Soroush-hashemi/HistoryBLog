@@ -121,6 +121,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\UserPanel\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

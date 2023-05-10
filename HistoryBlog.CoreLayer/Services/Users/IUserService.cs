@@ -1,5 +1,4 @@
-﻿using System;
-using TestBlog.Services.DTOs.Users;
+﻿using TestBlog.Services.DTOs.Users;
 using TestBlog.Services.Utilities;
 
 namespace TestBlog.Services.Services.Users
@@ -8,5 +7,6 @@ namespace TestBlog.Services.Services.Users
     {
         OperationResult RegisterUser(UserRegisterDto registerDto);
         UserDto LoginUser(LoginUserDto loginDto);
+        UserDto UserPanel(string UserId);
     }
 }
