@@ -17,11 +17,13 @@ namespace TestBlog.Services.Services.Users
         public OperationResult RegisterUser(UserRegisterDto registerDto)
         {
             var isUserNameExist = _context.Users.Any(u => u.UserName == registerDto.UserName);
+            var isUserEmailExist = _context.Users.Any(e => e.UserEmail == registerDto.UserEmail);
             var user = _context.Users;
 
             if (isUserNameExist)
-                return OperationResult.Error("نام کاربری تکراری است");
-
+                return OperationResult.Error("نام‌کاربری تکراری است");
+            if (isUserEmailExist)
+                return OperationResult.Error("ایمیل تکراری است");
             if (user == null)
                 return null;
 
@@ -29,6 +31,7 @@ namespace TestBlog.Services.Services.Users
             _context.Users.Add(new User()
             {
                 FullName = registerDto.Fullname,
+                UserEmail = registerDto.UserEmail,
                 IsDelete = false,
                 UserName = registerDto.UserName,
                 Role = UserRole.User,
@@ -51,6 +54,7 @@ namespace TestBlog.Services.Services.Users
             var userDto = new UserDto()
             {
                 FullName = user.FullName,
+                UserEmail= user.UserEmail,
                 Password = user.Password,
                 Role = user.Role,
                 UserName = user.UserName,
@@ -69,6 +73,7 @@ namespace TestBlog.Services.Services.Users
             {
                 FullName = user.FullName,
                 Role = user.Role,
+                UserEmail= user.UserEmail,
                 UserName= user.UserName,
                 RegisterDate = user.CreationDate,
             };

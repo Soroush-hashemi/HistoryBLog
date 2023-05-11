@@ -23,6 +23,10 @@ namespace TestBlog.Web.Pages.Auth
         [BindProperty]
         public string UserName { get; set; }
 
+        [Display(Name = "ایمیل")]
+        [Required(ErrorMessage = "{0} را وارد کنید")]
+        public string UserEmail { get; set; }
+
         [Required(ErrorMessage = "کلمه عبور را وارد کنید")]
         [MinLength(6, ErrorMessage = "کلمه عبور باید بیشتر از 5 کاراکتر باشد")]
         [BindProperty]
@@ -42,7 +46,8 @@ namespace TestBlog.Web.Pages.Auth
             var user = _userService.LoginUser(new LoginUserDto()
             {
                 Password = Password,
-                UserName = UserName
+                UserName = UserName,
+                UserEmail = UserEmail
             });
 
             if (user == null)

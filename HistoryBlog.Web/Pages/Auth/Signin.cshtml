@@ -15,6 +15,10 @@
         <input type="text" asp-for="FullName" placeholder="نام و نام خانوادگی" />
     </div>
     <div>
+        <input type="text" asp-for="UserEmail" placeholder="ایمیل" id="UserEmail" />
+        <span asp-validation-for="UserEmail" style="color: red"></span>
+    </div>
+    <div>
         <input type="password" asp-for="Password" placeholder="کلمه عبور" id="password" />
         <span asp-validation-for="Password" style="color: red"></span>
     </div>

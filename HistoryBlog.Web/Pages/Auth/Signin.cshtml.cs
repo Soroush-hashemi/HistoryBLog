@@ -19,6 +19,10 @@ namespace TestBlog.Web.Pages.Auth
         [Required(ErrorMessage = "{0} را وارد کنید")]
         public string UserName { get; set; }
 
+        [Display(Name = "ایمیل")]
+        [Required(ErrorMessage = "{0} را وارد کنید")]
+        public string UserEmail { get; set; }
+
         [Display(Name = "نام و نام خانوادگی")]
         [Required(ErrorMessage = "{0} را وارد کنید")]
         public string FullName { get; set; }
@@ -49,7 +53,8 @@ namespace TestBlog.Web.Pages.Auth
             {
                 UserName = UserName,
                 Password = Password,
-                Fullname = FullName
+                Fullname = FullName,
+                UserEmail = UserEmail
             });
             if (result.Status == OperationResultStatus.Error)
             {
